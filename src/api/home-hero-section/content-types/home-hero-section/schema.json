@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_hero_sections",
+  "info": {
+    "singularName": "home-hero-section",
+    "pluralName": "home-hero-sections",
+    "displayName": "Home-Hero-Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_heading": {
+      "type": "string",
+      "required": true
+    },
+    "main_description": {
+      "type": "text",
+      "required": true
+    },
+    "secondary_heading": {
+      "type": "string",
+      "required": true
+    },
+    "secondary_description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

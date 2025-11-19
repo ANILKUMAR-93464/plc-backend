@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_insurance_our_processes",
+  "info": {
+    "singularName": "home-insurance-our-process",
+    "pluralName": "home-insurance-our-processes",
+    "displayName": "Home-Insurance-Process"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "top_heading": {
+      "type": "string",
+      "required": true
+    },
+    "top_description": {
+      "type": "text",
+      "required": true
+    },
+    "claim_services": {
+      "type": "component",
+      "component": "services.claim-services",
+      "repeatable": true
+    },
+    "bottom_heading": {
+      "type": "string",
+      "required": true
+    },
+    "bottom_description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "our_process": {
+      "type": "component",
+      "component": "services.claim-services",
+      "repeatable": true
+    }
+  }
+}

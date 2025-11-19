@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "client_intake_forms",
+  "info": {
+    "singularName": "client-intake-form",
+    "pluralName": "client-intake-forms",
+    "displayName": "Client-Intake-Form"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "full_name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "property_address": {
+      "type": "text",
+      "required": true
+    },
+    "type_of_damage": {
+      "type": "text",
+      "required": true
+    },
+    "insurance_comapany": {
+      "type": "string",
+      "required": true
+    },
+    "policy_number": {
+      "type": "string"
+    },
+    "details_of_damage": {
+      "type": "text",
+      "required": true
+    }
+  }
+}
