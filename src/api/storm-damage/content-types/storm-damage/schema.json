@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "storm_damages",
+  "info": {
+    "singularName": "storm-damage",
+    "pluralName": "storm-damages",
+    "displayName": "Storm-Damage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "instructions": {
+      "type": "component",
+      "component": "services.claim-services",
+      "repeatable": true
+    },
+    "card_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "card_title": {
+      "type": "string",
+      "required": true
+    },
+    "suggetions": {
+      "type": "component",
+      "component": "damage.damage-solution",
+      "repeatable": true
+    }
+  }
+}

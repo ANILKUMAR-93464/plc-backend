@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_damage_damage_solutions",
+  "info": {
+    "displayName": "damage_solution"
+  },
+  "options": {},
+  "attributes": {
+    "item": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

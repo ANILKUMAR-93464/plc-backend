@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "home_bottom_sections",
+  "info": {
+    "singularName": "home-bottom-section",
+    "pluralName": "home-bottom-sections",
+    "displayName": "Home-Bottom-Section"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "who_we_are": {
+      "type": "component",
+      "component": "common.title-description",
+      "repeatable": false
+    },
+    "our_mission": {
+      "type": "component",
+      "component": "common.title-description",
+      "repeatable": false
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "our_work": {
+      "type": "component",
+      "component": "common.title-description",
+      "repeatable": false
+    },
+    "work_details": {
+      "type": "component",
+      "component": "our-work.seo",
+      "repeatable": true
+    },
+    "clients_section": {
+      "type": "component",
+      "component": "common.title-description",
+      "repeatable": false
+    },
+    "testimonials": {
+      "type": "component",
+      "component": "client.seo",
+      "repeatable": true
+    },
+    "blogs_section": {
+      "type": "component",
+      "component": "common.title-description",
+      "repeatable": false
+    }
+  }
+}

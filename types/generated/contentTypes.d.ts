@@ -430,6 +430,92 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiAboutAbout extends Struct.CollectionTypeSchema {
+  collectionName: 'abouts';
+  info: {
+    displayName: 'About';
+    pluralName: 'abouts';
+    singularName: 'about';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    behind_your_success_description: Schema.Attribute.Text &
+      Schema.Attribute.Required;
+    behind_your_success_title: Schema.Attribute.String &
+      Schema.Attribute.Required;
+    built_on_integrity: Schema.Attribute.Component<
+      'common.title-description',
+      true
+    >;
+    core_values: Schema.Attribute.Component<'common.title-description', true>;
+    core_values_title: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    drives_us: Schema.Attribute.Component<'common.title-description', true>;
+    drives_us_heading: Schema.Attribute.String & Schema.Attribute.Required;
+    frequently_asked: Schema.Attribute.Component<
+      'common.title-description',
+      true
+    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::about.about'> &
+      Schema.Attribute.Private;
+    main_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    most_adjusters: Schema.Attribute.Component<
+      'common.title-description',
+      true
+    >;
+    most_adjusters_heading: Schema.Attribute.String & Schema.Attribute.Required;
+    profiles: Schema.Attribute.Component<'profile.seo', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    sub_title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
+  collectionName: 'blogs';
+  info: {
+    displayName: 'Blog';
+    pluralName: 'blogs';
+    singularName: 'blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    flag: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'flag'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiClientIntakeFormClientIntakeForm
   extends Struct.CollectionTypeSchema {
   collectionName: 'client_intake_forms';
@@ -532,6 +618,90 @@ export interface ApiContactContact extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFireDamageFireDamage extends Struct.CollectionTypeSchema {
+  collectionName: 'fire_damages';
+  info: {
+    displayName: 'Fire-Damage';
+    pluralName: 'fire-damages';
+    singularName: 'fire-damage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    card_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    card_title: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    instructions: Schema.Attribute.Component<'services.claim-services', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::fire-damage.fire-damage'
+    > &
+      Schema.Attribute.Private;
+    main_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    suggetions: Schema.Attribute.Component<'damage.damage-solution', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomeBottomSectionHomeBottomSection
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'home_bottom_sections';
+  info: {
+    displayName: 'Home-Bottom-Section';
+    pluralName: 'home-bottom-sections';
+    singularName: 'home-bottom-section';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    blogs_section: Schema.Attribute.Component<
+      'common.title-description',
+      false
+    >;
+    clients_section: Schema.Attribute.Component<
+      'common.title-description',
+      false
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::home-bottom-section.home-bottom-section'
+    > &
+      Schema.Attribute.Private;
+    our_mission: Schema.Attribute.Component<'common.title-description', false>;
+    our_work: Schema.Attribute.Component<'common.title-description', false>;
+    phone: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    testimonials: Schema.Attribute.Component<'client.seo', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    who_we_are: Schema.Attribute.Component<'common.title-description', false>;
+    work_details: Schema.Attribute.Component<'our-work.seo', true>;
+  };
+}
+
 export interface ApiHomeHeroSectionHomeHeroSection
   extends Struct.CollectionTypeSchema {
   collectionName: 'home_hero_sections';
@@ -596,6 +766,180 @@ export interface ApiHomeInsuranceOurProcessHomeInsuranceOurProcess
     publishedAt: Schema.Attribute.DateTime;
     top_description: Schema.Attribute.Text & Schema.Attribute.Required;
     top_heading: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiPrivacyPolicyPrivacyPolicy
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'privacy_policies';
+  info: {
+    displayName: 'Privacy-Policy';
+    pluralName: 'privacy-policies';
+    singularName: 'privacy-policy';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    detailed_view: Schema.Attribute.RichText;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::privacy-policy.privacy-policy'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiServiceService extends Struct.CollectionTypeSchema {
+  collectionName: 'services';
+  info: {
+    displayName: 'Service';
+    pluralName: 'services';
+    singularName: 'service';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::service.service'
+    > &
+      Schema.Attribute.Private;
+    main_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    services: Schema.Attribute.Component<'services.our-services', true>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStormDamageStormDamage extends Struct.CollectionTypeSchema {
+  collectionName: 'storm_damages';
+  info: {
+    displayName: 'Storm-Damage';
+    pluralName: 'storm-damages';
+    singularName: 'storm-damage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    card_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    card_title: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    instructions: Schema.Attribute.Component<'services.claim-services', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::storm-damage.storm-damage'
+    > &
+      Schema.Attribute.Private;
+    main_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    suggetions: Schema.Attribute.Component<'damage.damage-solution', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiTermsAndConditionTermsAndCondition
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'terms_and_conditions';
+  info: {
+    displayName: 'Terms-and-Condition';
+    pluralName: 'terms-and-conditions';
+    singularName: 'terms-and-condition';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    detailed_view: Schema.Attribute.RichText & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::terms-and-condition.terms-and-condition'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWaterDamageWaterDamage extends Struct.CollectionTypeSchema {
+  collectionName: 'water_damages';
+  info: {
+    displayName: 'Water-Damage';
+    pluralName: 'water-damages';
+    singularName: 'water-damage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    card_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    card_title: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    instructions: Schema.Attribute.Component<'services.claim-services', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::water-damage.water-damage'
+    > &
+      Schema.Attribute.Private;
+    main_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    suggetions: Schema.Attribute.Component<'damage.damage-solution', true>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1112,11 +1456,20 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::about.about': ApiAboutAbout;
+      'api::blog.blog': ApiBlogBlog;
       'api::client-intake-form.client-intake-form': ApiClientIntakeFormClientIntakeForm;
       'api::contact-information.contact-information': ApiContactInformationContactInformation;
       'api::contact.contact': ApiContactContact;
+      'api::fire-damage.fire-damage': ApiFireDamageFireDamage;
+      'api::home-bottom-section.home-bottom-section': ApiHomeBottomSectionHomeBottomSection;
       'api::home-hero-section.home-hero-section': ApiHomeHeroSectionHomeHeroSection;
       'api::home-insurance-our-process.home-insurance-our-process': ApiHomeInsuranceOurProcessHomeInsuranceOurProcess;
+      'api::privacy-policy.privacy-policy': ApiPrivacyPolicyPrivacyPolicy;
+      'api::service.service': ApiServiceService;
+      'api::storm-damage.storm-damage': ApiStormDamageStormDamage;
+      'api::terms-and-condition.terms-and-condition': ApiTermsAndConditionTermsAndCondition;
+      'api::water-damage.water-damage': ApiWaterDamageWaterDamage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

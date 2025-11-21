@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_common_title_descriptions",
+  "info": {
+    "displayName": "title-description"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

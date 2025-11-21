@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "abouts",
+  "info": {
+    "singularName": "about",
+    "pluralName": "abouts",
+    "displayName": "About"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "main_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "sub_title": {
+      "type": "string",
+      "required": true
+    },
+    "built_on_integrity": {
+      "type": "component",
+      "component": "common.title-description",
+      "repeatable": true
+    },
+    "most_adjusters_heading": {
+      "type": "string",
+      "required": true
+    },
+    "most_adjusters": {
+      "type": "component",
+      "component": "common.title-description",
+      "repeatable": true
+    },
+    "drives_us_heading": {
+      "type": "string",
+      "required": true
+    },
+    "drives_us": {
+      "type": "component",
+      "component": "common.title-description",
+      "repeatable": true
+    },
+    "behind_your_success_title": {
+      "type": "string",
+      "required": true
+    },
+    "behind_your_success_description": {
+      "type": "text",
+      "required": true
+    },
+    "core_values_title": {
+      "type": "string",
+      "required": true
+    },
+    "core_values": {
+      "type": "component",
+      "component": "common.title-description",
+      "repeatable": true
+    },
+    "profiles": {
+      "type": "component",
+      "component": "profile.seo",
+      "repeatable": true
+    },
+    "frequently_asked": {
+      "type": "component",
+      "component": "common.title-description",
+      "repeatable": true
+    }
+  }
+}
