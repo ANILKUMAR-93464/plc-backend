@@ -40,6 +40,12 @@ const config = {
     favicon: AuthLogo,
     title: 'PLC - Property Loss Consultants',
   },
+  translations: {
+    en: {
+      'Auth.form.welcome.title': 'Welcome to PLC!',
+      'Auth.form.welcome.subtitle': 'Log in to your PLC account',
+    },
+  },
 };
 
 const bootstrap = (app) => {
